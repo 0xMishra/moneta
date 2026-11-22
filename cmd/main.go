@@ -31,7 +31,7 @@ func main() {
 	defer stop()
 
 	go func() {
-		logger.Info("wallet service listening", "addr", srv.Addr)
+		logger.Info("server listening", "addr", srv.Addr)
 		if err := srv.ListenAndServe(); err != nil && !errors.Is(err, http.ErrServerClosed) {
 			logger.Error("Server failed", "err", err)
 			os.Exit(1)
